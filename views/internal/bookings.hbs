@@ -1,0 +1,15 @@
+<h1>All Bookings</h1>
+{{#each companiesBooking}}
+<p class="text-dark">{{this.name}}</p>
+{{#each bookings}}
+<div><a href="/bookings/{{_id}}">Booking: {{date}} - {{time}}</a></div>
+<div><a href="/bookings/{{_id}}/edit">Edit Booking</a></div>
+<div>
+  <form action="/bookings/{{_id}}/delete" method="POST"><button type="submit">Delete</button>
+</div>
+<br>
+{{/each}}
+<hr>
+{{/each}}
+
+<a href="/staff/" class="btn btn-secondary">Home</a>
